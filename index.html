@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OCS – Résidences meublées à Abidjan</title>
+<style>
+:root{--bg:#fff;--card:#fff;--tx:#14202e;--mu:#667180;--br:#12304f;--br2:#e6ebf1;--ac:#a8844b;--gr:#2f6f57;--ln:#e4e7eb;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tx);line-height:1.55}
+h1,h2,h3,.logo,.pr{font-family:Georgia,"Times New Roman",serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:10}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--ln);display:flex;align-items:center;gap:14px;padding:12px 16px}
+.logo{font-weight:700;font-size:24px;color:var(--br);letter-spacing:4px;text-decoration:none}
+nav{display:flex;gap:4px;overflow-x:auto;flex:1}nav a{white-space:nowrap;text-decoration:none;color:var(--mu);padding:8px 12px;font-size:14px;border-bottom:2px solid transparent}
+nav a.on{color:var(--br);border-color:var(--ac);font-weight:600}
+main{max-width:1050px;margin:auto;padding:16px}
+.hero{background:#fff;color:var(--br);border:1px solid var(--ln);border-top:3px solid var(--ac);border-radius:6px;padding:34px 20px}
+.hero small{letter-spacing:3px;text-transform:uppercase;color:var(--ac);font-size:12px}
+.hero h1{margin:8px 0;font-size:28px;line-height:1.2;font-weight:600}.hero p{margin:0 0 20px;opacity:.85}
+.sb{background:var(--card);color:var(--tx);border:1px solid var(--ln);border-radius:4px;padding:14px;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+label{font-size:11px;color:var(--mu);display:block;text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}
+input,select{width:100%;padding:10px;border:1px solid var(--ln);border-radius:3px;background:var(--bg);color:var(--tx);font:inherit}
+.btn{background:var(--br);color:#fff;border:0;border-radius:3px;padding:12px 18px;font:inherit;font-weight:600;letter-spacing:.4px;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.btn.o{background:transparent;color:var(--br);border:1px solid var(--br)}.btn.g{background:var(--gr);color:#fff}.btn.s{padding:7px 12px;font-size:13px}.btn[disabled]{opacity:.45;cursor:not-allowed}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin:16px 0;font-size:13px;color:var(--mu)}.trust span::before{content:"";display:inline-block;width:6px;height:6px;background:var(--ac);margin-right:8px;vertical-align:middle}
+h2{margin:30px 0 12px;font-size:21px;font-weight:600;color:var(--br)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:4px;overflow:hidden;cursor:pointer;transition:box-shadow .2s}.card:hover{box-shadow:0 6px 20px #0002}
+.ph{height:150px;display:flex;align-items:flex-end;padding:12px;color:#fff;font-family:Georgia,serif;font-size:20px;position:relative}
+.ph b{position:absolute;top:10px;left:10px;background:#0009;color:#fff;font:600 10px system-ui;letter-spacing:1.2px;text-transform:uppercase;padding:4px 8px;border-radius:2px}
+.cb{padding:14px}.cb h3{margin:0 0 3px;font-size:17px}.mu{color:var(--mu);font-size:13px}.pr{font-weight:700;color:var(--br)}
+.quart{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}.quart button{white-space:nowrap;background:var(--card);border:1px solid var(--ln);border-radius:3px;padding:11px 18px;color:var(--tx);font:inherit;cursor:pointer}.quart button:hover{border-color:var(--ac)}
+.steps{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.box{background:var(--card);border:1px solid var(--ln);border-radius:4px;padding:16px}
+.num{font-family:Georgia,serif;color:var(--ac);font-size:26px;display:block}
+.cta{background:var(--br2);color:var(--br);border:1px solid var(--ln);border-radius:4px;padding:22px;margin-top:26px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}.cta .mu{color:var(--mu)}
+.filters{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));margin-bottom:14px}
+.det{display:grid;gap:20px;grid-template-columns:1fr}@media(min-width:800px){.det{grid-template-columns:1.6fr 1fr}}
+.side{background:var(--card);border:1px solid var(--ln);border-top:3px solid var(--ac);border-radius:4px;padding:16px;align-self:start;position:sticky;top:calc(76px + env(safe-area-inset-top,0px))}
+.row{display:flex;justify-content:space-between;gap:8px;padding:5px 0;font-size:14px}.tag{display:inline-block;border:1px solid var(--ln);background:var(--card);border-radius:2px;padding:4px 10px;font-size:13px;margin:3px 3px 0 0}
+.plans{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.plan{background:var(--card);border:1px solid var(--ln);border-radius:4px;padding:20px}.plan.hot{border:1px solid var(--ac);box-shadow:0 0 0 1px var(--ac)}.plan.cur{background:var(--br2)}
+.plan ul{padding-left:18px;margin:10px 0;font-size:14px}
+.kpi{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}.kpi div{background:var(--card);border:1px solid var(--ln);border-radius:4px;padding:14px}.kpi b{display:block;font:700 22px Georgia,serif;color:var(--br)}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card)}td,th{padding:10px;border-bottom:1px solid var(--ln);text-align:left;white-space:nowrap}th{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--mu)}
+.bars{display:flex;align-items:flex-end;gap:10px;height:120px;background:var(--card);border:1px solid var(--ln);border-radius:4px;padding:14px}.bars i{flex:1;background:var(--br);display:block}
+.ov{position:fixed;inset:0;background:#000a;display:none;align-items:flex-end;justify-content:center;z-index:20}.ov.on{display:flex}
+.mod{background:var(--card);width:100%;max-width:460px;border-radius:6px 6px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px));max-height:90%;overflow:auto}
+.pay{display:grid;gap:8px;margin:10px 0}.pay button{display:flex;align-items:center;gap:12px;padding:12px;border-radius:3px;border:1px solid var(--ln);background:var(--bg);color:var(--tx);font:inherit;cursor:pointer;text-align:left}.pay button.on{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac)}
+.dot{width:10px;height:26px;display:inline-block;border-radius:2px}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--br);color:#fff;border-radius:3px;padding:12px 18px;font-weight:600;text-decoration:none;z-index:6;box-shadow:0 4px 14px #0004;font-size:14px}
+footer{text-align:center;color:var(--mu);font-size:13px;padding:34px 14px 90px}
+.v{display:none}.v.on{display:block}.ok{color:var(--gr);font-weight:700}
+.lock{border:1px dashed var(--ln);background:var(--card);border-radius:4px;padding:22px;text-align:center}
+.prog{height:6px;background:var(--br2);border-radius:3px;overflow:hidden;margin:8px 0}.prog i{display:block;height:100%;background:var(--ac);transition:width .3s}
+.drop{border:1.5px dashed var(--ac);border-radius:4px;padding:26px;text-align:center;background:var(--card);cursor:pointer}
+.thumbs{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));margin-top:14px}
+.thumbs div{position:relative;aspect-ratio:4/3;border-radius:3px;overflow:hidden;background:var(--br2)}.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.thumbs button{position:absolute;top:4px;right:4px;background:#000b;color:#fff;border:0;border-radius:2px;font-size:11px;padding:3px 7px;cursor:pointer}
+.thumbs em{position:absolute;left:4px;bottom:4px;background:var(--ac);color:#fff;font:600 10px system-ui;padding:2px 6px;border-radius:2px;letter-spacing:.6px}
+.badge{display:inline-block;background:var(--ac);color:#fff;font:600 11px system-ui;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px}
+html{scroll-behavior:smooth}
+.v.on{animation:vin .5s cubic-bezier(.2,.7,.2,1)}@keyframes vin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}.rv.in{opacity:1;transform:none}
+.card{transition:box-shadow .3s,transform .3s}.card:hover{transform:translateY(-4px)}
+.btn{transition:transform .15s,opacity .2s}.btn:active{transform:scale(.97)}nav a{transition:color .25s,border-color .25s}.pay button,.quart button{transition:border-color .2s,box-shadow .2s}
+.ov{transition:opacity .25s}.ov.on .mod{animation:up .4s cubic-bezier(.2,.7,.2,1)}@keyframes up{from{transform:translateY(50px);opacity:0}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.v.on,.ov.on .mod{animation:none}.card:hover{transform:none}}
+</style></head><body>
+<header><a class="logo" href="#accueil">OCS</a>
+<nav id="nav"><a href="#accueil" data-r="accueil">Accueil</a><a href="#catalogue" data-r="catalogue">Résidences</a><a href="#espace-voyageur" data-r="espace-voyageur">Mes séjours</a><a href="#proprietaire" data-r="proprietaire">Propriétaires</a><a href="#admin" data-r="admin">Administration</a></nav></header>
+<main>
+<section class="v" id="v-accueil">
+<div class="hero"><h1>Des résidences meublées de standing, réservées en toute sérénité</h1><p>Courts et longs séjours · Logements vérifiés</p>
+<div class="sb"><div><label>Quartier</label><select id="hq"><option value="">Tous</option></select></div><div><label>Arrivée</label><input type="date" id="hd1"></div><div><label>Départ</label><input type="date" id="hd2"></div><div><label>Séjour</label><select id="hs"><option value="">Tous</option><option value="c">Court séjour</option><option value="l">Long séjour (1 mois+)</option></select></div><div style="align-self:end"><button class="btn" style="width:100%" onclick="searchHome()">Rechercher</button></div></div></div>
+<div class="trust"><span>Logements vérifiés par OCS</span><span>Assistance 7j/7 sur WhatsApp</span><span>Énergie de secours indiquée</span></div>
+<h2>Quartiers</h2><div class="quart" id="quarts"></div>
+<h2>Sélection du moment</h2><div class="grid" id="feat"></div>
+<h2>Comment ça marche</h2><div class="steps"><div class="box"><span class="num">01</span><b>Recherchez</b><br><span class="mu">Quartier, dates, budget et équipements locaux.</span></div><div class="box"><span class="num">02</span><b>Réservez</b><br><span class="mu">Compte par numéro de téléphone, acompte possible.</span></div><div class="box"><span class="num">03</span><b>Payez</b><br><span class="mu">Wave, Orange Money ou MTN Money, reçu par SMS.</span></div></div>
+<h2>Témoignages</h2><div class="steps"><div class="box">« Studio conforme aux photos, groupe électrogène sans interruption. » <div class="mu">Aïcha K., Plateau</div></div><div class="box">« Paiement Wave en une minute, reçu direct sur WhatsApp. » <div class="mu">Marc D., expatrié</div></div></div>
+<div class="cta"><div><b style="font-family:Georgia,serif;font-size:19px">Propriétaire ?</b><br><span class="mu">Exposez vos biens dès 15 000 FCFA par mois, sans commission.</span></div><a class="btn" href="#proprietaire">Devenir partenaire</a></div>
+</section>
+
+<section class="v" id="v-catalogue"><h2 style="margin-top:6px">Nos résidences</h2>
+<div class="filters"><div><label>Quartier</label><select id="fq"><option value="">Tous</option></select></div><div><label>Type</label><select id="ft"><option value="">Tous</option><option>Studio</option><option>2 pièces</option><option>3 pièces</option><option>Villa</option></select></div><div><label>Budget max / nuit</label><input type="number" id="fb" placeholder="50000" step="5000"></div><div><label>Équipement</label><select id="fe"><option value="">Tous</option><option>Groupe électrogène</option><option>Fibre</option><option>Clim</option><option>Piscine</option><option>Gardien 24h</option></select></div><div><label>Tri</label><select id="fs"><option value="p">Prix croissant</option><option value="n">Mieux notés</option></select></div></div>
+<div class="mu" id="cnt" style="margin-bottom:10px"></div><div class="grid" id="list"></div></section>
+
+<section class="v" id="v-detail"></section>
+
+<section class="v" id="v-espace-voyageur"><h2 style="margin-top:6px">Mon espace voyageur</h2><div class="box">Connexion par numéro de téléphone et code SMS.</div><h2>Mes réservations</h2><div id="res" class="grid"></div>
+<h2>Assistance pendant votre séjour</h2><a class="btn g" href="https://wa.me/2250767831574">Contacter l’assistance WhatsApp</a></section>
+
+<section class="v" id="v-proprietaire"><h2 style="margin-top:6px">Espace partenaire</h2><p class="mu">Exposez vos biens auprès de voyageurs vérifiés. <b>Aucune commission n’est prélevée sur vos réservations</b> : vous ne payez que votre forfait mensuel. Abonnement mensuel réglable par Mobile Money, rappel SMS/WhatsApp avant échéance et 5 jours de grâce.</p>
+<div class="plans" id="plans"></div>
+<h2>Tableau de bord</h2><div id="dlock" class="lock"><b style="font-family:Georgia,serif;font-size:18px">Tableau de bord réservé aux abonnés</b><p class="mu" style="margin:6px 0 0">Taux d’occupation, revenus et réservations à venir sont accessibles après souscription à un forfait.</p><button class="btn o s" style="margin-top:10px" onclick="toPlans()">Voir les forfaits</button></div><div class="kpi" id="dash" style="display:none"><div><span class="mu">Taux d’occupation</span><b>72 %</b></div><div><span class="mu">Revenus du mois</span><b>840 000 F</b></div><div><span class="mu">Réservations à venir</span><b>6</b></div><div><span class="mu">Abonnement</span><b id="subst">Aucun</b></div></div>
+<h2>Préparer mon annonce</h2><p class="mu" style="margin-top:-6px">Ajoutez photos, tarifs, règlement et contact librement. La mise en ligne nécessite un forfait.</p><div id="photos"></div>
+<h2>Parcours de mise en ligne</h2><div class="steps"><div class="box"><span class="num">01</span>Inscription et pièce d’identité</div><div class="box"><span class="num">02</span>Préparation de l’annonce : photos, prix, règles</div><div class="box"><span class="num">03</span>Souscription à un forfait et mise en ligne</div><div class="box"><span class="num">04</span>Vérification OCS sous 48-72 h</div></div></section>
+
+<section class="v" id="v-admin"><h2 style="margin-top:6px">Tableau de bord administrateur</h2>
+<div class="kpi"><div><span class="mu">Réservations (mois)</span><b>128</b></div><div><span class="mu">Revenus</span><b>9,4 M F</b></div><div><span class="mu">Abonnements actifs</span><b>34</b></div><div><span class="mu">Impayés</span><b>3</b></div></div>
+<h2>Revenus par semaine</h2><div class="bars"><i style="height:45%"></i><i style="height:60%"></i><i style="height:52%"></i><i style="height:85%"></i></div>
+<h2>Annonces à modérer</h2><div class="tw"><table id="mod"></table></div>
+<h2>Paiements récents</h2><div class="tw"><table><tr><th>Réf.</th><th>Client</th><th>Moyen</th><th>Montant</th><th>Statut</th></tr><tr><td>OCS-4821</td><td>M. Koné</td><td>Wave</td><td>84 000</td><td class="ok">Confirmé</td></tr><tr><td>OCS-4822</td><td>S. Traoré</td><td>Orange Money</td><td>40 000</td><td class="ok">Confirmé</td></tr><tr><td>OCS-4823</td><td>J. Yao</td><td>MTN Money</td><td>15 000</td><td>En attente</td></tr></table></div>
+<p class="mu">Rôles : support, comptabilité, modérateur. Exports Excel/PDF et réconciliation Mobile Money.</p></section>
+</main>
+<footer>OCS · Abidjan, Côte d’Ivoire · Assistance 7j/7 : +225 07 67 83 15 74<br>CGU · Politique d’annulation · FAQ · Contact</footer>
+<a class="wa" href="https://wa.me/2250767831574">WhatsApp</a>
+<div class="ov" id="ov"><div class="mod" id="mod2"></div></div>
+<script>
+var A=[
+{id:1,t:"Studio moderne Riviera Palmeraie",q:"Cocody",ty:"Studio",n:28000,m:550000,ch:1,e:["Groupe électrogène","Fibre","Clim","Gardien 24h"],no:4.8,c:"#2b4a6b,#6b8aa8"},
+{id:2,t:"Deux pièces Zone 4",q:"Marcory",ty:"2 pièces",n:38000,m:760000,ch:2,e:["Fibre","Clim","Groupe électrogène"],no:4.7,c:"#3d4a45,#8a9a8f"},
+{id:3,t:"Trois pièces standing, Plateau",q:"Plateau",ty:"3 pièces",n:60000,m:1200000,ch:3,e:["Groupe électrogène","Fibre","Clim","Gardien 24h"],no:4.9,c:"#1c2f45,#5d7590"},
+{id:4,t:"Villa avec piscine, Bingerville",q:"Bingerville",ty:"Villa",n:120000,m:2400000,ch:4,e:["Piscine","Groupe électrogène","Clim","Gardien 24h"],no:4.9,c:"#4a3f2e,#a8947a"},
+{id:5,t:"Studio Angré 8e tranche",q:"Cocody",ty:"Studio",n:22000,m:430000,ch:1,e:["Fibre","Clim"],no:4.5,c:"#34384a,#7b8199"},
+{id:6,t:"Deux pièces vue lagune, II Plateaux",q:"Cocody",ty:"2 pièces",n:45000,m:900000,ch:2,e:["Groupe électrogène","Fibre","Clim"],no:4.8,c:"#2a4545,#6f9494"}];
+var WAVE_LINK="",WAVE_NUM="+225 07 67 83 15 74",USSD={"Orange Money":"tel:%23144%23","MTN Money":"tel:*133%23"};
+var Q=["Cocody","Marcory","Plateau","Bingerville","Assinie"];
+var PL=[{n:"Essentiel",p:15000,ph:8,lim:1,l:["1 annonce","Annonce standard","Support par e-mail"]},{n:"Pro",p:30000,ph:20,lim:5,l:["5 annonces","Mise en avant","Statistiques détaillées"],hot:1},{n:"Premium",p:50000,ph:50,lim:99,l:["Annonces illimitées","Photographe inclus","Gestion déléguée","Premiers résultats"]}];
+var cur=-1,PH=[],RES=[],MODQ=[["Villa Assinie Plage","M. Bakayoko","Villa"],["Studio Zone 4","Mme Diallo","Studio"],["2P Riviera 3","M. N’Guessan","2 pièces"]];
+var $=function(i){return document.getElementById(i)};
+var F=function(n){return Math.round(n).toLocaleString("fr-FR").replace(/\u202f/g," ")+" FCFA"};
+Q.forEach(function(q){["hq","fq"].forEach(function(i){var o=document.createElement("option");o.textContent=q;$(i).appendChild(o)})});
+$("quarts").innerHTML=Q.map(function(q){return '<button onclick="goQ(\''+q+'\')">'+q+'</button>'}).join("");
+function bg(a){if(a.photos&&a.photos[0])return "url("+a.photos[0]+") center/cover";var c=a.c.split(",");return "linear-gradient(160deg,"+c[0]+","+c[1]+")"}
+function card(a){return '<div class="card" onclick="location.hash=\'bien-'+a.id+'\'"><div class="ph" style="background:'+bg(a)+'">'+a.ty+'<b>'+(a.own?"Vérification en cours":"Vérifié OCS")+'</b></div><div class="cb"><h3>'+a.t+'</h3><div class="mu">'+a.q+' · '+a.ty+(a.no?' · Note '+a.no:' · Nouveau')+'</div><div class="pr">'+F(a.n)+' <span class="mu">/ nuit</span></div><div class="mu">ou '+F(a.m)+' / mois</div></div></div>'}
+$("feat").innerHTML=A.slice(0,3).map(card).join("");
+function goQ(q){$("fq").value=q;location.hash="catalogue";list()}
+function searchHome(){$("fq").value=$("hq").value;window.hd=[$("hd1").value,$("hd2").value];location.hash="catalogue";list()}
+function list(){var q=$("fq").value,t=$("ft").value,b=+$("fb").value,e=$("fe").value;
+var r=A.filter(function(a){return(!q||a.q==q)&&(!t||a.ty==t)&&(!b||a.n<=b)&&(!e||a.e.indexOf(e)>-1)});
+r.sort(function(x,y){return $("fs").value=="n"?y.no-x.no:x.n-y.n});
+$("cnt").textContent=r.length+" résidence(s)";$("list").innerHTML=r.length?r.map(card).join(""):'<div class="box">Aucun résultat. Élargissez vos filtres.</div>';reveal()}
+["fq","ft","fb","fe","fs"].forEach(function(i){$(i).addEventListener("input",list)});
+function detail(id){var a=A.filter(function(x){return x.id==id})[0];if(!a)return;var d=window.hd||["",""];
+$("v-detail").innerHTML='<a href="#catalogue" class="mu">← Retour aux résidences</a><div class="det"><div><div class="ph" style="background:'+bg(a)+';height:240px;font-size:28px;border-radius:4px">'+a.t+'<b>'+(a.own?"Vérification en cours":"Vérifié OCS")+'</b></div><h2>'+a.t+'</h2><div class="mu">'+a.q+', Abidjan'+(a.no?' · Note '+a.no:'')+' · '+a.ch+' chambre(s) · Adresse exacte communiquée après réservation</div>'+
+(a.photos&&a.photos.length>1?'<div class="thumbs">'+a.photos.slice(1).map(function(s){return '<div><img src="'+s+'" alt=""></div>'}).join("")+'</div>':"")+'<h2>Équipements</h2>'+a.e.map(function(x){return '<span class="tag">'+x+'</span>'}).join("")+'<span class="tag">Eau chaude</span><span class="tag">Parking sécurisé</span>'+
+'<h2>Confort au quotidien</h2><div class="box">Énergie de secours : '+(a.e.indexOf("Groupe électrogène")>-1?"groupe électrogène en résidence":"onduleur")+'<br>Wi-Fi testé par OCS<br>Pression d’eau contrôlée</div>'+
+'<h2>Distances</h2><div class="box">Aéroport FHB : environ 35 min · Centre commercial : environ 10 min<br><span class="mu">Estimations hors heures de pointe.</span></div>'+
+'<h2>Règlement et annulation</h2><div class="box">'+(a.rules||"Annulation gratuite jusqu’à 48 h avant l’arrivée. Arrivée dès 14 h, départ avant 11 h. Non-fumeur.")+'</div>'+
+'<h2>Contact</h2><div class="box">'+(a.own?(a.nm?esc(a.nm)+'<br>':'')+'<a href="tel:+225'+dg(a.tel)+'">'+esc(a.tel)+'</a> · <a href="https://wa.me/225'+dg(a.tel)+'">WhatsApp</a>':'OCS : <a href="tel:+2250767831574">+225 07 67 83 15 74</a> · <a href="https://wa.me/2250767831574">WhatsApp</a>')+'<div class="mu">Aucune commission prélevée sur la réservation.</div></div>'+'<h2>Avis vérifiés</h2><div class="box">« Propre, sécurisé, équipe réactive. » <span class="mu">– Fatou, 3 nuits</span></div></div>'+
+'<div class="side"><div class="pr" style="font-size:24px">'+F(a.n)+' <span class="mu" style="font-size:14px">/ nuit</span></div><div class="mu">Séjour long : '+F(a.m)+' / mois</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0"><div><label>Arrivée</label><input type="date" id="d1" value="'+d[0]+'"></div><div><label>Départ</label><input type="date" id="d2" value="'+d[1]+'"></div></div><div id="calc"></div><button class="btn" style="width:100%;margin-top:10px" onclick="book('+a.id+')">Réserver</button><p class="mu" style="font-size:12px">Aucun frais caché, aucune commission.</p></div></div>';
+["d1","d2"].forEach(function(i){$(i).addEventListener("input",function(){calc(a)})});calc(a)}
+function quote(a){var x=new Date($("d1").value),y=new Date($("d2").value),n=Math.round((y-x)/864e5);if(!(n>0))return null;
+var s=n>=30?a.m/30*n:a.n*n,m=a.ch*5000+5000,tot=s+m;return{n:n,s:s,m:m,t:tot,ac:Math.round(tot*.3)}}
+function calc(a){var q=quote(a);$("calc").innerHTML=q?'<div class="row"><span>'+q.n+' nuit(s)'+(q.n>=30?" (tarif mensuel)":"")+'</span><span>'+F(q.s)+'</span></div><div class="row"><span>Ménage</span><span>'+F(q.m)+'</span></div><div class="row"><b>Total</b><b>'+F(q.t)+'</b></div><div class="row mu"><span>Acompte (30 %)</span><span>'+F(q.ac)+'</span></div>':'<div class="mu">Choisissez vos dates pour voir le prix total.</div>'}
+function book(id){var a=A.filter(function(x){return x.id==id})[0],q=quote(a);if(!q){alert("Merci de choisir vos dates.");return}
+var d1=$("d1").value,d2=$("d2").value;
+pay("Réserver · "+a.t,q.t,q.ac,true,function(ref,w){RES.push({t:a.t,d:d1+" → "+d2,ref:ref,st:w?"Dépôt à vérifier":"Acompte payé"})})}
+function pay(title,total,acompte,ask,done){var m=$("mod2"),sel="",nom="",tel="";
+function s1(){m.innerHTML='<h3 style="margin-top:0">'+title+'</h3>'+(ask?'<label>Nom complet</label><input id="pn" value="'+nom+'" autocomplete="name"><label style="margin-top:8px">Téléphone</label><input id="pt" type="tel" placeholder="07 00 00 00 00" value="'+tel+'"><label style="margin-top:8px">Montant</label><select id="pm"><option value="'+acompte+'">Acompte 30 % : '+F(acompte)+'</option><option value="'+total+'">Total : '+F(total)+'</option></select>':'<div class="row"><b>À payer</b><b>'+F(total)+'</b></div><label>Téléphone</label><input id="pt" type="tel" placeholder="07 00 00 00 00" value="'+tel+'">')+
+'<h4>Moyen de paiement</h4><div class="pay">'+[["Wave","#1dc8f2"],["Orange Money","#ff7900"],["MTN Money","#ffcc00"]].map(function(p){return '<button data-p="'+p[0]+'" class="'+(sel==p[0]?"on":"")+'"><span class="dot" style="background:'+p[1]+'"></span>'+p[0]+'</button>'}).join("")+'</div><button class="btn" style="width:100%" id="go">Payer</button><button class="btn o" style="width:100%;margin-top:8px" onclick="closeM()">Annuler</button>';
+Array.prototype.forEach.call(m.querySelectorAll(".pay button"),function(b){b.onclick=function(){sel=b.dataset.p;if($("pn"))nom=$("pn").value;tel=$("pt").value;s1()}});
+$("go").onclick=function(){tel=$("pt").value;if($("pn"))nom=$("pn").value;if(!sel||tel.replace(/\D/g,"").length<8||(ask&&!nom)){alert("Complétez vos informations et choisissez un moyen de paiement.");return}
+s2($("pm")?+$("pm").value:total)}}
+function sw(amt){var ref="OCS-"+Math.floor(1000+Math.random()*9000);
+m.innerHTML=`<h3 style="margin-top:0">Dépôt via ${sel}</h3><p class="mu">Effectuez un dépôt ${sel} vers le numéro de l’assistance OCS en indiquant la référence ci-dessous.</p><div class="box"><div class="row"><span>Numéro</span><b>${WAVE_NUM}</b></div><div class="row"><span>Montant</span><b>${F(amt)}</b></div><div class="row"><span>Référence</span><b>${ref}</b></div></div>${(sel=="Wave"?WAVE_LINK:USSD[sel])?`<a class="btn" style="display:block;margin-top:10px" href="${sel=="Wave"?WAVE_LINK:USSD[sel]}"${sel=="Wave"?` target="_blank" rel="noopener"`:""}>Ouvrir ${sel}</a>`:`<button class="btn" style="width:100%;margin-top:10px" id="wo">Ouvrir Wave</button>`}<p class="mu" id="wm">${sel=="Wave"?"":"Le bouton ouvre le menu "+sel+" de votre téléphone (code "+(sel=="MTN Money"?"*133#":"#144#")+"). Choisissez le transfert, puis saisissez le numéro, le montant et la référence. "}Une fois le dépôt effectué, confirmez ci-dessous.</p><button class="btn g" style="width:100%" id="wd">J’ai effectué le dépôt</button>`;
+if($("wo"))$("wo").onclick=function(){$("wm").textContent="Ouvrez votre application Wave, choisissez Envoyer, puis saisissez le numéro, le montant et la référence."};
+$("wd").onclick=function(){done(ref,true);m.innerHTML='<h3 style="margin-top:0" class="ok">Dépôt signalé</h3><p>Référence <b>'+ref+'</b>. OCS confirme la réception de votre dépôt et vous envoie le reçu par SMS et WhatsApp.</p><button class="btn" style="width:100%" onclick="closeM();route()">Continuer</button>'}}
+function s2(amt){return sw(amt);m.innerHTML='<h3 style="margin-top:0">Validez sur votre téléphone</h3><p>Une demande de <b>'+F(amt)+'</b> a été envoyée via <b>'+sel+'</b> au '+tel+'.</p><p class="mu">Saisissez votre code secret pour confirmer. En cas d’échec, aucun montant n’est débité.</p><div class="box">En attente de confirmation…</div>';
+setTimeout(function(){var ref="OCS-"+Math.floor(1000+Math.random()*9000);done(ref);m.innerHTML='<h3 style="margin-top:0" class="ok">Paiement confirmé</h3><p>Référence <b>'+ref+'</b>. Reçu envoyé par SMS et WhatsApp.</p><button class="btn" style="width:100%" onclick="closeM();route()">Continuer</button>'},2200)}
+$("ov").classList.add("on");s1()}
+function closeM(){$("ov").classList.remove("on")}
+$("ov").addEventListener("click",function(e){if(e.target==this)closeM()});
+function plans(){$("plans").innerHTML=PL.map(function(p,i){var on=i==cur;return '<div class="plan'+(p.hot?" hot":"")+(on?" cur":"")+'"><b style="font-family:Georgia,serif;font-size:19px">'+p.n+'</b> '+(on?'<span class="badge">Actif</span>':p.hot?'<span class="badge">Recommandé</span>':"")+'<div class="pr" style="font-size:24px;margin-top:4px">'+F(p.p)+'<span class="mu" style="font-size:13px"> /mois</span></div><ul>'+p.l.map(function(x){return "<li>"+x+"</li>"}).join("")+'<li><b>'+p.ph+' photos</b> incluses</li></ul><button class="btn'+(on?" o":"")+'" style="width:100%"'+(on?" disabled":"")+' onclick="sub('+i+')">'+(on?"Formule actuelle":cur<0?"Choisir":"Changer de formule")+'</button></div>'}).join("")}
+function sub(i){var p=PL[i];pay("Abonnement "+p.n,p.p,0,false,function(){cur=i;$("subst").textContent=p.n;plans();photos()})}
+var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+var EQ=["Groupe électrogène","Fibre","Clim","Piscine","Gardien 24h"],MAXD=50,flash="";
+var gv=function(i){return $(i).value.trim()};
+function photos(){$("dash").style.display=cur>=0?"":"none";$("dlock").style.display=cur>=0?"none":"";if(!$("lf"))buildForm();renderPh();renderPub()}
+function dg(t){return t.replace(/\D/g,"").replace(/^225(?=\d{10}$)/,"")}function toPlans(){$("plans").scrollIntoView({behavior:"smooth"})}
+function buildForm(){
+$("photos").innerHTML=`<div class="box" id="lf"><div class="filters">
+<div><label>Titre de l’annonce</label><input id="l_t" placeholder="Studio moderne, Riviera"></div>
+<div><label>Quartier</label><select id="l_q">${Q.map(q=>`<option>${q}</option>`).join("")}</select></div>
+<div><label>Type</label><select id="l_ty"><option>Studio</option><option>2 pièces</option><option>3 pièces</option><option>Villa</option></select></div>
+<div><label>Chambres</label><input id="l_ch" type="number" min="1" value="1"></div></div>
+<h4>Tarifs</h4><div class="filters"><div><label>Prix par nuit (FCFA)</label><input id="l_n" type="number" min="0" step="1000"></div><div><label>Prix par mois (FCFA)</label><input id="l_m" type="number" min="0" step="10000"></div></div>
+<h4>Équipements</h4><div>${EQ.map(e=>`<label style="display:inline-block;margin:0 14px 6px 0;text-transform:none;letter-spacing:0;font-size:14px;color:var(--tx)"><input type="checkbox" class="eq" value="${e}" style="width:auto"> ${e}</label>`).join("")}</div>
+<h4>Règlement intérieur</h4><textarea id="l_r" rows="3" placeholder="Arrivée dès 14 h, départ avant 11 h, non-fumeur, animaux non admis…" style="width:100%;padding:10px;border:1px solid var(--ln);border-radius:3px;font:inherit;background:var(--bg);color:var(--tx)"></textarea>
+<h4>Vos coordonnées</h4><div class="filters"><div><label>Nom</label><input id="l_nm"></div><div><label>Téléphone</label><input id="l_tel" type="tel" placeholder="07 00 00 00 00"></div></div><div class="mu">Vos coordonnées seront visibles publiquement sur votre annonce, afin que les voyageurs puissent vous contacter directement.</div>
+<h4>Photos</h4><div id="phz"></div><div id="pub" style="margin-top:18px"></div></div>`}
+function renderPh(){var p=cur>=0?PL[cur]:null,n=PH.length;
+$("phz").innerHTML=`<div class="row"><span>Photos ajoutées</span><b>${n} / ${MAXD}</b></div><div class="prog"><i style="width:${n/MAXD*100}%"></i></div><div class="mu">${p?`Forfait ${p.n} : ${p.ph} photos publiées au maximum.`:"Le forfait choisi définit le nombre de photos publiées : 8 (Essentiel), 20 (Pro), 50 (Premium)."}</div>`+(n<MAXD?`<label class="drop" style="display:block;margin-top:10px;text-transform:none;letter-spacing:0;font-size:14px;color:var(--tx)"><b>Ajouter des photos</b><br><span class="mu">JPG ou PNG, 5 Mo maximum</span><input type="file" id="fi" accept="image/*" multiple style="display:none"></label>`:"")+`<div class="thumbs">${PH.map((s,i)=>`<div><img src="${s}" alt="Photo ${i+1}">${i==0?"<em>COUVERTURE</em>":""}<button onclick="delP(${i})">Retirer</button></div>`).join("")}</div>`;
+if($("fi"))$("fi").onchange=function(){var fs=[].slice.call(this.files),left=MAXD-PH.length,skip=0;
+fs.forEach(function(f){if(left<=0||f.size>5242880||f.type.indexOf("image/")!=0){skip++;return}left--;var r=new FileReader();r.onload=function(){if(PH.length<MAXD){PH.push(r.result);renderPh()}};r.readAsDataURL(f)});
+if(skip)alert(skip+" fichier(s) ignoré(s) : limite atteinte, taille supérieure à 5 Mo ou format invalide.")}}
+function delP(i){PH.splice(i,1);renderPh()}
+function renderPub(){var mine=A.filter(a=>a.own),p=cur>=0?PL[cur]:null;
+$("pub").innerHTML=(flash?`<div class="box" style="border-color:var(--ac);margin-bottom:12px">${flash}</div>`:"")+
+(p?`<div class="mu" style="margin-bottom:8px">Forfait ${p.n} actif · ${mine.length} / ${p.lim>50?"illimitées":p.lim} annonce(s) en ligne</div>`:`<div class="lock" style="margin-bottom:12px"><b>Mise en ligne réservée aux abonnés</b><p class="mu" style="margin:6px 0 0">Préparez votre annonce librement. Pour la publier, souscrivez à un forfait.</p><button class="btn o s" style="margin-top:10px" onclick="toPlans()">Voir les forfaits</button></div>`)+
+`<button class="btn" style="width:100%" onclick="publish()">Mettre en ligne mon annonce</button>`+
+(mine.length?`<h4>Mes annonces en ligne</h4>`+mine.map(a=>`<div class="row"><span>${a.t}</span><a href="#bien-${a.id}">Voir</a></div>`).join(""):"");flash=""}
+function publish(){var t=gv("l_t"),n=+gv("l_n"),tel=gv("l_tel");
+if(!t||!n||tel.replace(/\D/g,"").length<8||!PH.length){flash="Renseignez le titre, le prix par nuit, votre téléphone et ajoutez au moins une photo.";return renderPub()}
+if(cur<0){flash="Pour mettre votre annonce en ligne, choisissez d’abord un forfait ci-dessus.";renderPub();return toPlans()}
+var p=PL[cur],mine=A.filter(a=>a.own).length;
+if(mine>=p.lim){flash="Votre forfait "+p.n+" autorise "+p.lim+" annonce(s). Passez à une formule supérieure.";return renderPub()}
+if(PH.length>p.ph){flash="Votre forfait "+p.n+" autorise "+p.ph+" photos et vous en avez "+PH.length+". Retirez-en "+(PH.length-p.ph)+" ou changez de forfait.";return renderPub()}
+var eq=[].map.call(document.querySelectorAll(".eq:checked"),e=>e.value),m=+gv("l_m");
+A.push({id:100+A.length,own:1,t:esc(t),q:gv("l_q"),ty:gv("l_ty"),n:n,m:m||n*20,ch:+gv("l_ch")||1,e:eq,no:0,c:"#2b4a6b,#6b8aa8",rules:esc(gv("l_r")).replace(/\n/g,"<br>"),photos:PH.slice(0,p.ph),tel:tel,nm:gv("l_nm")});
+PH=[];buildForm();renderPh();flash="Votre annonce « "+esc(t)+" » est en ligne. Vérification OCS sous 48-72 h.";renderPub()}
+
+function modq(){$("mod").innerHTML='<tr><th>Annonce</th><th>Propriétaire</th><th>Type</th><th></th></tr>'+(MODQ.length?MODQ.map(function(r,i){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td><button class="btn g s" onclick="MODQ.splice('+i+',1);modq()">Valider</button></td></tr>'}).join(""):'<tr><td colspan="4" class="ok">Aucune annonce en attente</td></tr>')}
+function res(){$("res").innerHTML=RES.length?RES.map(function(r){return '<div class="box"><b>'+r.t+'</b><div class="mu">'+r.d+'</div><div>Réf. '+r.ref+' · <span class="ok">'+r.st+'</span></div></div>'}).join(""):'<div class="box mu">Aucune réservation pour le moment. <a href="#catalogue">Trouver une résidence</a></div>'}
+function route(){var h=location.hash.slice(1)||"accueil",v=h.indexOf("bien-")==0?"detail":h;if(!$("v-"+v)){v="accueil";h="accueil"}
+Array.prototype.forEach.call(document.querySelectorAll(".v"),function(e){e.classList.toggle("on",e.id=="v-"+v)});
+Array.prototype.forEach.call(document.querySelectorAll("nav a"),function(a){a.classList.toggle("on",a.dataset.r==(v=="detail"?"catalogue":v))});
+if(v=="catalogue")list();if(v=="detail")detail(h.slice(5));if(v=="admin")modq();if(v=="espace-voyageur")res();if(v=="proprietaire"){plans();photos()}window.scrollTo({top:0,behavior:"instant"});reveal()}
+var IO=window.IntersectionObserver?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add("in");IO.unobserve(t);setTimeout(function(){t.classList.remove("rv","in");t.style.removeProperty("--d")},1000)}})},{threshold:.08,rootMargin:"0px 0px -30px 0px"}):null;
+function reveal(){var v=document.querySelector(".v.on");if(!v)return;[].forEach.call(v.querySelectorAll(".hero,.sb,.trust,h2,.quart,.card,.box,.plan,.kpi>div,.cta,.side,.lock,.bars,.tw,.steps>div"),function(el,i){if(el.classList.contains("rv"))return;el.classList.add("rv");el.style.setProperty("--d",(i%6)*.07+"s");if(IO)IO.observe(el);else el.classList.add("in")})}
+window.addEventListener("hashchange",route);route();
+</script></body></html>
